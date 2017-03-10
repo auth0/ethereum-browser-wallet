@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Ethereum Authentication server</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/angular-csp.css">
+</head>
+
+<body>
+
+	<div class="jumbotron text-center">
+		<h2>Ethereum wallet</h2>
+		<p>Register </p>
+	</div>
+
+	<div class="container main-container" ng-app="InformationApp" ng-controller="informationCtrl" ng-cloak>
+		<div class="row">
+			<div>
+				<h3 class="infoTitle">Register your Address</h3>
+				<form class="form-horizontal">
+					<div class="form-group">
+						<label for="address" class="col-sm-3 control-label ">Your Secondary Address:</label>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" rows="5" id="address" id="secondaryAddress">
+						</div>
+					</div>
+				</form>
+			</div>
+			<div class="buttonAlign">
+				<button type="button" class="btn btn-info actionButton" ng-click="register()">Register</button>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<script type="text/javascript" src="js/registerApp.js"></script>
+</body>
+
+</html>
