@@ -1,0 +1,10 @@
+{
+  "name": "Ethereum-browser-wallet",
+  "description": "Ethereum-browser-wallet",
+  "version": "0.0.1",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "3.x"
+  }
+}
