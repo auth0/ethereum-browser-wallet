@@ -25,11 +25,11 @@ angular.module('InformationApp', [])
 .controller('informationCtrl', function($scope, $http, $location) {
 	
 	
-	var abi=[{"constant":false,"inputs":[{"name":"authenticationKey","type":"address"}],"name":"register","outputs":[],"payable":false,"type":"function"},{"constant":false,"inputs":[{"name":"newAuthenticationKey","type":"address"}],"name":"changeAuthenticationKey","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"keyEntries","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"keysInUse","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"anonymous":false,"inputs":[{"indexed":false,"name":"owner","type":"address"},{"indexed":false,"name":"keyEntryAddress","type":"address"}],"name":"Registration","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"code","type":"uint256"},{"indexed":false,"name":"owner","type":"address"}],"name":"Error","type":"event"}];
+	var abi=[{"constant":false,"inputs":[{"name":"secondary","type":"address"}],"name":"mapAddress","outputs":[],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"secondaryInUse","outputs":[{"name":"","type":"bool"}],"payable":false,"type":"function"},{"constant":true,"inputs":[{"name":"","type":"address"}],"name":"primaryToSecondary","outputs":[{"name":"","type":"address"}],"payable":false,"type":"function"},{"anonymous":false,"inputs":[{"indexed":false,"name":"primary","type":"address"},{"indexed":false,"name":"secondary","type":"address"}],"name":"AddressMapped","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"name":"code","type":"uint256"},{"indexed":false,"name":"sender","type":"address"}],"name":"Error","type":"event"}];
 	
 	$scope.register = function(){
 		console.log(document.getElementById('secondaryAddress').value)
-		web3.eth.contract(abi).at("0x197ef7967a3e4482e917519df422efbc4dde02d3").register(document.getElementById('secondaryAddress').value, {
+		web3.eth.contract(abi).at("0x1b250ab38567c7f02b9895fbb7b06d4baf4072ff").mapAddress(document.getElementById('secondaryAddress').value, {
 			from: web3.eth.accounts[0]
 		}, function (error, result) {
 			if (!error) {
