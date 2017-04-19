@@ -29,6 +29,6 @@ const express = require('express'),
 app.use(bodyParser.json());
 app.use('/wallet', express.static(__dirname + '/web'));
 
-app.listen(3000, function () {
-       console.log('Ethereum Browser Wallet listen port 3000');
+app.listen(3002, function () {
+       console.log('Ethereum Browser Wallet listen port 3002');
 });
