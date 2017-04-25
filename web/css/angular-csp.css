@@ -26,9 +26,7 @@ body{
 	padding: 20px 50px 40px;
 	
 	background: #fff;
-	top: 50%;
 	left: 50%;
-	margin-top: -200px;
 	margin-left: -500px;
 	z-index: 99;
 	border-radius: 6px;
