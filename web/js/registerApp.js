@@ -29,7 +29,7 @@ angular.module('InformationApp', [])
 	
 	$scope.register = function(){
 		console.log(document.getElementById('secondaryAddress').value)
-		web3.eth.contract(abi).at("0xf01f9d549b92e61079caad748471b0864e88e30f").mapAddress(document.getElementById('secondaryAddress').value, {
+		web3.eth.contract(abi).at("0x5e24bf433aee99227737663c0a387f02a9ed4b8a").mapAddress(document.getElementById('secondaryAddress').value, {
 			from: web3.eth.accounts[0]
 		}, function (error, result) {
 			if (!error) {
