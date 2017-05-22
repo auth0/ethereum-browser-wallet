@@ -23,12 +23,19 @@
 */
 
 const express = require('express'),
-	  bodyParser = require('body-parser'),
+	  bodyParser = require('body-parser')
+	  fs = require('fs'),
+	  https = require('https'),
 	  app = express();
 
 app.use(bodyParser.json());
 app.use('/wallet', express.static(__dirname + '/web'));
 
-app.listen(3002, function () {
-       console.log('Ethereum Browser Wallet listen port 3002');
+const httpsOptions = {
+        key: fs.readFileSync(__dirname + '/config/certs/server.key'),
+        cert: fs.readFileSync(__dirname + '/config/certs/server.crt')
+    };
+
+https.createServer(httpsOptions, app).listen(3002, function () {
+    console.log('[HTTPS] Ethereum Browser Wallet listen port 3002...');
 });
